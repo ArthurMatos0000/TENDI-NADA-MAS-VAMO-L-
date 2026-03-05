@@ -5,11 +5,12 @@
 }
 
 header {
-    background: linear-gradient(to right, #333, #1d4c0e, #333);
+    background: linear-gradient(to right,#333,#a71c24, #333);
     color: #fff;
     padding: 15px;
     text-align: center;
 }
+
 
 nav ul {
     list-style-type: none;
@@ -40,4 +41,104 @@ footer {
     width: 100%;
     user-select: none; 
     -webkit-user-drag: none;
+}
+
+body.home {
+    background: url('imagems/ChatGPT Image 4 de mar. de 2026, 22_58_42.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.playing {
+    background: none;
+    overflow: hidden; 
+}
+
+body.playing header,
+body.playing nav,
+body.playing footer {
+    display: none !important;
+}
+
+body.playing #meu-botao {
+    position: fixed !important;
+    top: 10px !important;
+    right: 10px !important;
+    left: auto !important;
+    z-index: 1000;
+}
+
+img {
+    -webkit-user-drag: none;
+    pointer-events: none; 
+}
+
+#meu-botao {
+    display: inline-block;
+    padding: 10px 20px;
+    position: absolute;
+    top: 650px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #60271d, #863145, #60271d);
+    color: #fff;
+    user-select: none;
+    -webkit-user-drag: none;
+    border: 2px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: ease-in-out 1.3s;
+    z-index: 1000;
+}  
+
+#diff-menu button {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 5px;
+}
+
+#diff-menu {
+    background: #222 !important; /* modal itself dark */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+#diff-menu button {
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    color: #fff; /* ensure text is visible on colored background */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+#diff-menu button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255,255,255,0.6);
+    color: #000;
+    font-weight: bold;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0,0) skew(0); border-color: transparent; }
+    20% { transform: translate(-2px,2px) skew(-5deg); border-color: red; }
+    40% { transform: translate(2px,-2px) skew(5deg); border-color: red; }
+    60% { transform: translate(-2px,-2px) skew(-5deg); border-color: red; }
+    80% { transform: translate(2px,2px) skew(5deg); border-color: red; }
+    100% { transform: translate(0,0) skew(0); border-color: transparent; }
+}
+#diff-menu button[data-diff="desafio"]:hover {
+    animation: glitch 0.4s infinite, colorflash 0.1s infinite;
+    box-shadow: 0 0 16px 6px rgba(255,0,0,0.9);
+    border: 2px solid red;
+    color: yellow;
+    text-shadow: 0 0 5px red;
+}
+
+@keyframes colorflash {
+    0%,100% { color: yellow; }
+    50% { color: white; }
+}
+
+#meu-botao:hover {
+    background: linear-gradient(to right, #863145, #60271d, #863145);
 }
