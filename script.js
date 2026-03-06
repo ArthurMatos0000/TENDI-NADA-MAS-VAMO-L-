@@ -191,12 +191,13 @@
             if (!playing) return;
             ctx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
 
+
             const speedMult = difficulty === 'desafio' ? 1.5 : 1;
             const step = player.speed * speedMult;
-            if (keys['W']) player.y = Math.max(0, player.y - step);
-            if (keys['S']) player.y = Math.min(gameCanvas.height - player.size, player.y + step);
-            if (keys['A']) player.x = Math.max(0, player.x - step);
-            if (keys['D']) player.x = Math.min(gameCanvas.width - player.size, player.x + step);
+            if (keys['W'] && player.y > 0) player.y -= step;
+            if (keys['S'] && player.y + player.size < gameCanvas.height) player.y += step;
+            if (keys['A'] && player.x > 0) player.x -= step;
+            if (keys['D'] && player.x + player.size < gameCanvas.width) player.x += step;
 
             // JOGADOR
             ctx.fillStyle = 'red';
