@@ -44,7 +44,6 @@
             levels.forEach(lvl => {
                 const btn = document.createElement('button');
                 btn.textContent = lvl;
-                // dataset should use unaccented key for logic
                 btn.dataset.diff = lvl.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
                 btn.style.margin = '5px';
                 btn.style.padding = '10px 20px';
@@ -74,7 +73,7 @@
 
         let playing = false;
         let gameCanvas, ctx, player, target, score, obstacles, walls, lasers, diagonals, bounces, reverseObs, bossItems;
-        let keys = {};
+        let keys = {W: false, A: false, S: false, D: false};
         let highScore = 0;
         let wallCooldown = 0; 
         let difficulty = 'facil';
@@ -194,10 +193,10 @@
 
             const speedMult = difficulty === 'desafio' ? 1.5 : 1;
             const step = player.speed * speedMult;
-            if (keys['ArrowUp']) player.y = Math.max(0, player.y - step);
-            if (keys['ArrowDown']) player.y = Math.min(gameCanvas.height - player.size, player.y + step);
-            if (keys['ArrowLeft']) player.x = Math.max(0, player.x - step);
-            if (keys['ArrowRight']) player.x = Math.min(gameCanvas.width - player.size, player.x + step);
+            if (keys['W']) player.y = Math.max(0, player.y - step);
+            if (keys['S']) player.y = Math.min(gameCanvas.height - player.size, player.y + step);
+            if (keys['A']) player.x = Math.max(0, player.x - step);
+            if (keys['D']) player.x = Math.min(gameCanvas.width - player.size, player.x + step);
 
             // JOGADOR
             ctx.fillStyle = 'red';
@@ -457,7 +456,7 @@
             myButton.style.padding = '8px 16px';
             myButton.style.fontSize = '16px';
             myButton.style.position = 'absolute';
-            myButton.style.top = '650px';
+            myButton.style.top = '290px';
             myButton.style.left = '50%';
             myButton.style.transform = 'translateX(-50%)';
             myButton.style.zIndex = '1000';
