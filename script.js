@@ -73,7 +73,7 @@
 
         let playing = false;
         let gameCanvas, ctx, player, target, score, obstacles, walls, lasers, diagonals, bounces, reverseObs, bossItems;
-        let keys = {W: false, A: false, S: false, D: false};
+        let keys = {W: false, S: false, A: false, D: false};
         let highScore = 0;
         let wallCooldown = 0; 
         let difficulty = 'facil';
