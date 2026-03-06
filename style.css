@@ -44,7 +44,7 @@ footer {
 }
 
 body.home {
-    background: url('imagems/ChatGPT Image 4 de mar. de 2026, 22_58_42.png') no-repeat center center fixed;
+    background: url("imagems/ChatGPT Image 6 de mar. de 2026, 09_11_25.png") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -76,7 +76,7 @@ img {
     display: inline-block;
     padding: 10px 20px;
     position: absolute;
-    top: 650px;
+    top: 350px;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(to right, #60271d, #863145, #60271d);
