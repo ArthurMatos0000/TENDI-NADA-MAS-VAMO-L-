@@ -50,10 +50,10 @@ main {
 
 footer {
     background: linear-gradient(to right,#333,#a71c24, #333);
-    color: #fff;
+    color: #fff;    
     text-align: center;
     position: fixed;
-    bottom: 0;
+    bottom: 0;  
     width: 100%;
     user-select: none; 
     -webkit-user-drag: none;
@@ -103,8 +103,9 @@ img {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: ease-in-out 1.3s;
+    transition: ease-in-out 1.3s;   
     z-index: 1000;
+    -webkit-box-align: center;
 }  
 
 #diff-menu button {

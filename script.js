@@ -73,7 +73,7 @@
 
         let playing = false;
         let gameCanvas, ctx, player, target, score, obstacles, walls, lasers, diagonals, bounces, reverseObs, bossItems;
-        let keys = {W: false, S: false, A: false, D: false};
+        let keys = {W: false, S: false, A: false, D: false, w: false, s: false, a: false, d: false}; 
         let highScore = 0;
         let wallCooldown = 0; 
         let difficulty = 'facil';
@@ -198,6 +198,10 @@
             if (keys['S'] && player.y + player.size < gameCanvas.height) player.y += step;
             if (keys['A'] && player.x > 0) player.x -= step;
             if (keys['D'] && player.x + player.size < gameCanvas.width) player.x += step;
+            if (keys['w'] && player.y > 0) player.y -= step;
+            if (keys['s'] && player.y + player.size < gameCanvas.height) player.y += step;
+            if (keys['a'] && player.x > 0) player.x -= step;
+            if (keys['d'] && player.x + player.size < gameCanvas.width) player.x += step;
 
             // JOGADOR
             ctx.fillStyle = 'red';
